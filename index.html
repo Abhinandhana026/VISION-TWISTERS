@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="scrap.jpeg" 
+                 alt="Smart Study Planner Logo" class="logo">
+        
+            <h1>Study Planner</h1>
+            <button id="theme-toggle">🌓 Toggle Dark Mode</button>
+        </header>
+
+        <section id="task-input-section">
+            <form id="task-form">
+                <input type="text" id="subject" placeholder="Subject" required>
+                <input type="text" id="task-description" placeholder="Task Description" required>
+                <input type="date" id="deadline" required>
+                <select id="difficulty">
+                    <option value="">Select Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <input type="number" id="estimated-time" placeholder="Estimated Hours" min="0.5" step="0.5" required>
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+
+        <section id="tasks-section">
+            <div id="progress-container">
+                <div class="progress-label">Study Progress</div>
+                <div id="progress-bar"></div>
+            </div>
+            <div id="task-list"></div>
+        </section>
+
+        <section id="calendar-section">
+            <h2>Study Calendar</h2>
+            <div id="calendar"></div>
+        </section>
+
+        <section id="time-estimation-section">
+            <h2>Study Time Estimation</h2>
+            <div id="time-estimation-results"></div>
+        </section>
+    </div>
+
+    <div id="edit-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <form id="edit-task-form">
+                <input type="text" id="edit-subject" required>
+                <input type="text" id="edit-task-description" required>
+                <input type="date" id="edit-deadline" required>
+                <select id="edit-difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <input type="number" id="edit-estimated-time" min="0.5" step="0.5" required>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
