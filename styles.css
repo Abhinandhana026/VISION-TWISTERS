@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #f4f4f4;
+    --bg-color:transparent;
     --text-color: #333;
     --primary-color: #4a90e2;
     --secondary-color: #50c878;
@@ -22,6 +22,21 @@ body {
     margin: 0;
     padding: 20px;
     transition: background-color 0.3s, color 0.3s;
+    background-image:url('bgd.jpeg') ;
+    background-size: cover; 
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    opacity: 1.0;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* White overlay with 50% opacity */
+    z-index: -1;
 }
 .logo {
     width: 80px;  /* Adjust logo size */
